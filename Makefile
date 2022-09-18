@@ -4,10 +4,12 @@ image_tag = "jupyter-ds-1.0.0"
 image_name = "yp13_notebooks"
 container_name = "notebook"
 
-run:
+build:
 	docker build . \
 		--build-arg REQUIREMENTS="requirements.txt" \
 		-t ${image_name}:${image_tag} 
+
+run:
 	docker run \
 		--detach \
 		--name ${container_name} \
