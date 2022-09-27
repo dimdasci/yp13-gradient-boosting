@@ -4,6 +4,11 @@ LABEL maintainer="dimdasci <dimds@fastmail.com>"
 
 ARG REQUIREMENTS='requirements.txt'
 
+# Install libgomp1
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+RUN apt-get -y install curl
+RUN apt-get install libgomp1
+
 # Create the user
 RUN groupadd --gid 1000 dim \
     && useradd --uid 1000 --gid 1000 -m dim

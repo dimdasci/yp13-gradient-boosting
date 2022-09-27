@@ -1,6 +1,6 @@
 notebooks_work_directory = "${CURDIR}/notebooks"
 notebook_data_directory = "${CURDIR}/notebooks/data"
-image_tag = "jupyter-ds-1.0.0"
+image_tag = "jupyter-ds-1.1.0"
 image_name = "yp13_notebooks"
 container_name = "notebook"
 
