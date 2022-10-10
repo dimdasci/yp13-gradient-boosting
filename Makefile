@@ -23,7 +23,7 @@ stop:
 	docker stop ${container_name}
 
 run_on_host:
-	jupyter notebook --ip 0.0.0.0 --no-browser
+	jupyter notebook --ip 0.0.0.0 --no-browser notebooks
 
 requirements:
 	pip install --no-cache-dir -r requirements.txt
