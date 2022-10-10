@@ -18,6 +18,16 @@ run:
 		-it --rm -p 8888:8888 ${image_name}:${image_tag}
 	sleep 10
 	docker exec ${container_name} jupyter notebook list
-
+	
 stop:
 	docker stop ${container_name}
+
+run_on_host:
+	jupyter notebook --ip 0.0.0.0 --no-browser
+
+requirements:
+	pip install --no-cache-dir -r requirements.txt
+	jupyter contrib nbextension install --user
+	jupyter nbextension enable code_prettify/code_prettify 
+	jupyter nbextension enable toc2/main
+	jupyter nbextension enable collapsible_headings/main
